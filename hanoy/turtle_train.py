@@ -6,7 +6,7 @@ class Disc(Turtle): # Disc 는 속성이 Turtle 임을선언.
         self.speed(6)
         self.penup()        # 이동줄 그리지 말고
         self.shapesize(1.5, n*1.5, 2) # (가로 세로 테두리)
-        self.fillcolor(n/6., 0, 1-n/6.)
+        self.fillcolor(n/15., 0, 1-n/15.)
         self.showturtle()   # 이동중 터틀 보이기
         
 class Tower(list): # Tower 는 list 임을 선언.
@@ -36,7 +36,7 @@ def play():
     onkey(None,"space")
     clear()
     try:
-        hanoi(6, t1, t2, t3)
+        hanoi(10, t1, t2, t3)
         write("press STOP button to exit",
               align="center", font=("Courier", 16, "bold"))
     except Terminator:
@@ -54,7 +54,7 @@ if __name__=="__main__":
     t2 = Tower(0)
     t3 = Tower(250)
     # make tower of 6 discs
-    for i in range(6,0,-1):
+    for i in range(10,0,-1):
         t1.push(Disc(i))
     # prepare spartanic user interface ;-)
     write("press spacebar to start game",
